@@ -70,7 +70,9 @@ def upload():
 				plt.figure(filename) # make a new figure
 				plt.xlabel('Number of cells: ' + str(len(f))) #label axis
 				tp.annotate(f, frame) #display the iamge and the circle overlay
-				plt.savefig(os.path.join(app.config['UPLOAD_FOLDER'], filename), format='png')   # save the figure to filenames
+				filename_png_extension = os.path.splitext(filename)[0] + ".png"
+				
+				plt.savefig(os.path.join(app.config['UPLOAD_FOLDER'], filename_png_extension), format='png')   # save the figure to filenames
 				plt.close() #close figure
 					
 				# Save the filename into a list, we'll use it later
