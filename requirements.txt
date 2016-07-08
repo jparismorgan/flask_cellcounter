@@ -3,7 +3,6 @@ argcomplete==0.8.9
 astropy==1.0.3
 backports-abc==0.4
 backports.ssl-match-hostname==3.4.0.2
-bcolz==0.9.0
 bitarray==0.8.1
 cdecimal==2.3
 conda==4.1.6
