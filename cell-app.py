@@ -79,6 +79,7 @@ def upload():
 				f = tp.locate(frames, _diameter, minmass=_min_mass, separation=_separation, invert=_invert) #noise_size=_noise_size, smoothing_size=_smoothing_size, 
 				plt.ioff() #interactive mode = off
 				plt.figure(filename) # make a new figure
+				plt.title(filename)
 				plt.xlabel('Number of cells: ' + str(len(f))) #label axis
 				tp.annotate(f, frame) #display the iamge and the circle overlay
 				
@@ -89,6 +90,7 @@ def upload():
 					
 				# Save the filename into a list, we'll use it later
 				filenames.append(filename)
+	print(filenames, file=sys.stderr)
 	# Load an html page with a link to each uploaded file
 	return render_template('upload.html', filenames=filenames)
 
