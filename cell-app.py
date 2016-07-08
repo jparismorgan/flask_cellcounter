@@ -1,3 +1,6 @@
+##############################################################
+# Julian Paris Morgan | 6/27/16
+
 ##Web and File Libraries
 from __future__ import division, unicode_literals, print_function  # for compatibility with Python 2 and 3
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
@@ -61,9 +64,6 @@ def upload():
 	#list of files for use on upload.html
 	filenames = []
 
-#TODO - Save original images into an uploads folder, then get them and put them in a downloads folder.
-#Clear both every time. will avoid save issues
-
 	for file in uploaded_files:
 		# Check if the file is one of the allowed types/extensions
 		if file and allowed_file(file.filename):
@@ -109,4 +109,4 @@ def allowed_file(filename):
 
 if __name__ == "__main__":
 	#for debugging, remove for production
-	app.run(debug=True)
+	app.run(debug=False)
