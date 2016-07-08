@@ -19,6 +19,7 @@ multipledispatch==0.4.7
 numpy==1.9.2
 openpyxl==1.8.5
 pandas==0.16.2
+Pillow==2.8.2
 PIMS==0.3.2
 ply==3.6
 psutil==2.2.1
