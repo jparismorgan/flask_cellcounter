@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cell Counter</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+  </head>
+  <body>
+        <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="http://soft-matter.github.io/trackpy/v0.3.0/">Trackpy</a></li>
+            <li role="presentation" class="https://www.linkedin.com/in/jparismorgan"><a href="https://www.linkedin.com/in/jparismorgan">Suggestions? Message me on LinkedIn</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted"><a href="/">Cell Counter</a></h3>
+      </div>
+      
+      <div>
+      This is a list of the files you just uploaded, click on them to load/download them
+      <ul>
+        {% for file in filenames %}
+          <li><a href="{{url_for('uploaded_file', filename=file)}}">{{file}}</a></li>
+        {% endfor %}
+      </ul>
+    </br>
+      </div>
+      <footer class="footer">
+        <p>&copy; Julian Paris Morgan 2016</p>
+      </footer>
+
+      </div>
+    
+    </div>
+  </body>
+</html>
+ 

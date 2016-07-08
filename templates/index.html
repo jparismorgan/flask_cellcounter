@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cell Counter</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href="../static/signup.css" rel="stylesheet">
+    <SCRIPT SRC="/static/js/index.js"></SCRIPT>
+  </head>
+
+  <body>
+ 
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="http://soft-matter.github.io/trackpy/v0.3.0/">Trackpy</a></li>
+            <li role="presentation" class="https://www.linkedin.com/in/jparismorgan
+"><a href="https://www.linkedin.com/in/jparismorgan
+">Suggestions? Message me on LinkedIn</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted"><a href="#">Cell Counter</a></h3>
+      </div>
+ 
+      <div class="jumbotron">
+        <h4>This is a tool to count cells on a hemocytometer. Please select your parameters and choose files to upload. It uses the TrackPy particle tracking library's <a href="http://soft-matter.github.io/trackpy/dev/generated/trackpy.locate.html"> 'locate' </a>  function.</h4>
+        <h6> If you want me to add a default value button for you, just let me know! </h6>
+        
+        <button type="button" onclick="useDefaultValues()">Use Default Values for <i>Chlorella Sorokiniana</i></button>
+
+        <form action="upload" class="form-signin" method="post" enctype="multipart/form-data">
+       
+            <input type="invert" name="invert" id="invert" class="form-control" placeholder="Invert --> True if cells darker than background, False if not." required autofocus>
+
+            <input type="diameter" name="diameter" id="diameter" class="form-control" placeholder="Diameter --> Rough size of the feature in pixels; must be odd." required autofocus>
+
+            <input type="minmass" name="minmass" id="minmass" class="form-control" placeholder="Minmass --> Minimum integrated brightness. Increasing eliminates spurious features." required autofocus>
+
+            <input type="separation" name="separation" id="separation" class="form-control" placeholder="Separation --> Minimum separtion between features. Default is diameter + 1." required autofocus>
+
+            <input type="noise_size" name="noise_size" id="noise_size" class="form-control" placeholder="Noise_size --> Width of Gaussian blurring kernel, in pixels Default is 1." required autofocus>
+
+            <input type="smoothing_size" name="smoothing_size" id="smoothing_size" class="form-control" placeholder="Smoothing_size --> Size of boxcar smoothing, in pixels Default is diameter." required autofocus>
+
+                 <br />
+            <input type="file" multiple="" name="file[]" class="span3" />
+
+            <br />
+            <input type="submit" value="Upload" id="upload_button" class="span2">
+            
+            <div id="spinner" class="spinner" style="display:none;">
+              <img id="img-spinner" src="static\images\loader.gif" alt="Loading"/>
+            </div>
+        
+        </form>
+
+      </div>
+ 
+      <footer class="footer">
+        <p>&copy; Julian Paris Morgan 2016</p>
+      </footer>
+ 
+    </div>
+  </body>
+</html>
+
