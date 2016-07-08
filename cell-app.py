@@ -5,6 +5,7 @@ import os
 from werkzeug.utils import secure_filename
 import sys
 
+
 ##Cell Counting Libraries
 import matplotlib as mpl
 mpl.use('Agg') #non-interactive backend
@@ -18,6 +19,9 @@ import trackpy as tp
 
 #Debug
 import logging
+
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'tif'])
