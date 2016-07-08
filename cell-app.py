@@ -20,13 +20,15 @@ import trackpy as tp
 #Debug
 import logging
 
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = 'uploads'	#where we put the final images
+DOWNLOAD_FOLDER = 'downloads' #where we put the un-marked user images
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'tif'])
 
 app = Flask(__name__)
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
 
 @app.route("/")
 def main():
@@ -35,7 +37,13 @@ def main():
 # Route that will process the file upload
 @app.route('/upload', methods=['POST'])
 def upload():
-	#clear the upload directory
+	#clear the DOWNLOAD directory
+	for root, dirs, files in os.walk(app.config['DOWNLOAD_FOLDER']):
+	    for f in files:
+	    	os.unlink(os.path.join(root, f))
+	    for d in dirs:
+	    	shutil.rmtree(os.path.join(root, d))
+	#clear the UPLOAD directory
 	for root, dirs, files in os.walk(app.config['UPLOAD_FOLDER']):
 	    for f in files:
 	    	os.unlink(os.path.join(root, f))
@@ -53,15 +61,18 @@ def upload():
 	#list of files for use on upload.html
 	filenames = []
 
+#TODO - Save original images into an uploads folder, then get them and put them in a downloads folder.
+#Clear both every time. will avoid save issues
+
 	for file in uploaded_files:
 		# Check if the file is one of the allowed types/extensions
 		if file and allowed_file(file.filename):
 			# Make the filename safe, remove unsupported chars
 			filename = secure_filename(file.filename)
 			#Save file to upload folder
-			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+			file.save(os.path.join(app.config['DOWNLOAD_FOLDER'], filename))
 			#load the image frames
-			frames = pims.ImageSequence(os.path.join(app.config['UPLOAD_FOLDER'], filename), as_grey=True)
+			frames = pims.ImageSequence(os.path.join(app.config['DOWNLOAD_FOLDER'], filename), as_grey=True)
 			#for loop of 1 to deal with PIMS bug.
 			for frame in frames: 
 				#locate features
