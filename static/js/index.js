@@ -13,11 +13,3 @@ function useDefaultValues(){
         document.getElementById('separation').value = 25;
         document.getElementById('smoothing_size').value = 21;
     }
-
-
-// $("#upload_button").click(function(e){
-//      e.preventDefault();
-//      //show loading gif
-//      $(this).closest('form').submit();
-// });
-

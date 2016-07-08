@@ -90,4 +90,4 @@ def allowed_file(filename):
 
 if __name__ == "__main__":
 	#for debugging, remove for production
-	app.run(debug=False)
+	app.run(debug=True)
