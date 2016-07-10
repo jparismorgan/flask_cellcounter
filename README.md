@@ -10,15 +10,23 @@ There are web and command line versions available. To use, simply upload your se
 
 * Command Line: cell_counter_commandline.py
 
-## Built With
+## Example
 
-* [TrackPy - Particle Tracking Toolkit](https://github.com/soft-matter/trackpy)
-* Flask
-* Python 2.7.10
+Before
 
-## Authors
+https://cloud.githubusercontent.com/assets/1396242/16716266/1f135a34-46ac-11e6-8c64-5cc7661f832e.jpg
 
-* Julian Paris Morgan
+After
+
+https://cloud.githubusercontent.com/assets/1396242/16716264/1a70bc56-46ac-11e6-8d9d-92eec5fda6d9.png
+
+## Acknowledgements
+
+* This site is based off of [TrackPy - Particle Tracking Toolkit](https://github.com/soft-matter/trackpy). 
+
+## Future plans
+
+The next version of this site will use a least squares approach to iteratively determining the best fit parameters.
 
 ## License
 
