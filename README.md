@@ -12,13 +12,9 @@ There are web and command line versions available. To use, simply upload your se
 
 ## Example
 
-Before
+[Before] (https://cloud.githubusercontent.com/assets/1396242/16716266/1f135a34-46ac-11e6-8c64-5cc7661f832e.jpg)
 
-https://cloud.githubusercontent.com/assets/1396242/16716266/1f135a34-46ac-11e6-8c64-5cc7661f832e.jpg
-
-After
-
-https://cloud.githubusercontent.com/assets/1396242/16716264/1a70bc56-46ac-11e6-8d9d-92eec5fda6d9.png
+[After] (https://cloud.githubusercontent.com/assets/1396242/16716264/1a70bc56-46ac-11e6-8d9d-92eec5fda6d9.png)
 
 ## Acknowledgements
 
