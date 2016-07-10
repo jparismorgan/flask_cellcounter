@@ -8,7 +8,7 @@ There are web and command line versions available. To use, simply upload your se
 
 * [Website](https://rapid-cell-counter.herokuapp.com/).
 
-* Command Line: cell_counter_commandline.py
+* [Command Line] (/cell_counter_commandline.py)
 
 ## Example
 
