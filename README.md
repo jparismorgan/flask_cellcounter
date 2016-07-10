@@ -1,14 +1,14 @@
 # Cell Counter
 
-Quickly count cells on a hemocytometer plate. Developed for use at NASA Ames in the Bebout Lab.
+Quickly count cells on a hemocytometer plate. Developed for use at the Bebout Lab, NASA Ames.
 
 ## Getting Started
 
-There are web and command line versions available. To use, simply upload your selected files and set your classification parameters.
+There are web and command line versions available. To use, simply upload your selected files and set your classification parameters. 
 
 * [Website](https://rapid-cell-counter.herokuapp.com/).
 
-* [Command Line](src/cell_counter.py)
+* Command Line: cell_counter_commandline.py
 
 ## Built With
 
