@@ -6,7 +6,7 @@ Quickly count cells on a hemocytometer plate. Developed for use at the Bebout La
 
 There are web and command line versions available. To use, simply upload your selected files and set your classification parameters. 
 
-* [Website](https://rapid-cell-counter.herokuapp.com/).
+* [Website](https://rapid-cell-counter.herokuapp.com/)
 
 * [Command Line] (/cell_counter_commandline.py)
 
@@ -18,7 +18,7 @@ There are web and command line versions available. To use, simply upload your se
 
 ## Acknowledgements
 
-* This site is based off of [TrackPy - Particle Tracking Toolkit](https://github.com/soft-matter/trackpy). 
+* This site uses the [TrackPy - Particle Tracking Toolkit](https://github.com/soft-matter/trackpy). 
 
 ## Future plans
 

@@ -18,9 +18,10 @@ import trackpy as tp
 def main():
 	print("Opening up Chlorella Classifier...")
 
+	extension = '/Users/parismorgan/Desktop/images/test/*'
 	#Get image source
-	if (raw_input("Do you want to use the images in ../images? y/n\n") == "y"):
-		frames = pims.ImageSequence('/Users/parismorgan/Desktop/images/*', as_grey=True)
+	if (raw_input("Do you want to use the images in "+extension+" y/n\n") == "y"):
+		frames = pims.ImageSequence(extension, as_grey=True)
 	else:
 		filepath = raw_input("What directory are your images located in?\n")
 		toCont = "y"	
@@ -39,7 +40,7 @@ def main():
 	
 	#Determine parameters
 	if (raw_input("Do you want to use the default parameters? y/n\n") == "y"):
-		imageClassifier(frames,21, 2600, 25)
+		imageClassifier(frames,11, 1400, 11)
 	else:
 		cellsize = raw_input("cell size?")
 		if (cellsize % 2) == 0:
@@ -53,8 +54,8 @@ def main():
 def imageClassifier(frames, cell_size, min_mass, particle_separation):
 	print("We have "+str(len(frames))+" images in this batch.\nWe will open them up one at a time.\n Feel free to save them and then exit the window to view the next one.")
 	for frame in frames:
-		f = tp.locate(frame, 21, invert=True, minmass=min_mass, separation=particle_separation, noise_size=4)
-		locationWeightHistogram(f)
+		f = tp.locate(frame, cell_size, invert=True, minmass=min_mass, separation=particle_separation, noise_size=4)
+		#locationWeightHistogram(f)
 		plt.figure("Filename") # make a new figure
 		plt.xlabel('Number of cells: ' + str(len(f)))
 		tp.annotate(f, frame)
